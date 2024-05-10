@@ -28,10 +28,6 @@ Assignment Tracker is a robust application built using ASP.NET Core and Microsof
 
 This application is built using ASP.NET Core Web App on MacOS using Rider and Docker (For SQL Server Instance).
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](link-to-license) file for details.
 
-## Support or Contact
 
-For support or inquiries, please contact us at [support@example.com](mailto:support@example.com).

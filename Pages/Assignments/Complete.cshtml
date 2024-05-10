@@ -1,0 +1,41 @@
+@page 
+@using System.Data.SqlClient
+
+@{
+    try
+    {
+        string id = Request.Query["id"]; // Retrieve the assignment ID from the query string
+
+        string connectToDb = "Server=localhost,1433;Database=Trackerdb;User Id=sa;Password=DB_SQLMac;";
+
+        using (SqlConnection connection = new SqlConnection(connectToDb))
+        {
+            connection.Open();
+
+            // Construct the SQL update statement
+            string updateSql = "UPDATE Assignment SET status = 'Completed' WHERE assignment_id = @Id";
+
+            // Create a SqlCommand object with the update statement and connection
+            using (SqlCommand updateCommand = new SqlCommand(updateSql, connection))
+            {
+                // Add the assignment ID parameter
+                updateCommand.Parameters.AddWithValue("@Id", id);
+
+                // Execute the update command
+                updateCommand.ExecuteNonQuery();
+            }
+        }
+
+        // Redirect the user to the assignments index page
+        Response.Redirect("/Assignments/Index");
+    }
+    catch (Exception ex)
+    {
+        // Handle the exception, log it, or return an error message.
+        // For now, let's just print the exception message.
+        Console.WriteLine("Exception: " + ex.Message);
+        // Optionally, you can redirect the user to an error page.
+        // return RedirectToPage("/Error");
+    }
+
+}

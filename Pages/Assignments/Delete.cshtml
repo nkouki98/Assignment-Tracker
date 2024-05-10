@@ -1,0 +1,37 @@
+@page 
+@using System.Data.SqlClient
+
+@{
+    try
+    {
+        string id = Request.Query["id"];
+
+        string connectToDB = "Server=localhost,1433;Database=Trackerdb;User Id=sa;Password=DB_SQLMac;";
+        using (SqlConnection connection = new SqlConnection(connectToDB))
+        {
+            connection.Open();
+
+            // Delete the record from the Assignment table based on the provided ID
+            string deleteSql = @"
+    DELETE FROM Assignment WHERE assignment_id = @Id;
+    DBCC CHECKIDENT ('Assignment', RESEED, 0);
+";
+
+            using (SqlCommand deleteCommand = new SqlCommand(deleteSql, connection))
+            {
+                deleteCommand.Parameters.AddWithValue("@Id", id);
+                deleteCommand.ExecuteNonQuery();
+            }
+
+        }
+        Response.Redirect("/Assignments/Index");
+    }
+    catch (Exception ex)
+    {
+        // Handle the exception, log it, or return an error message.
+        // For now, let's just print the exception message.
+        Console.WriteLine("Exception: " + ex.Message);
+        // Optionally, you can redirect the user to an error page.
+        // Response.Redirect("/Error");
+    }
+}

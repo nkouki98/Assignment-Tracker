@@ -1,0 +1,63 @@
+@page
+@model AssignmentTracker.Pages.Assignments.IndexModel
+
+<br/>
+<br/>
+<head>
+    <title>My Assignments</title>
+</head>
+<body>
+    <div class="header">
+        <h1>My Assignments</h1>
+        <button class="add-button" onclick="location.href='/Assignments/Create'">New +</button>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Deadline</th>
+            <th>Course</th>
+            <th>Instructor Email</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <br/>
+        @foreach (var item in Model.ListAssignments)
+        {
+            <tr>
+               
+                <td>@item.id</td>
+                <td>@item.title</td>
+                <td>@item.description</td>
+                <td>@(item.deadline.HasValue ? item.deadline.Value.ToString("MMMM dd, yyyy") : "")</td>
+                <td>@item.course</td>
+                <td>@item.instructor_email</td>
+            <td>
+                @if (item.status == "Completed")
+                {
+                    <span class="completed-status">Completed</span>
+                }
+                else
+                {
+                    <span class="pending-status">Pending</span>
+                }
+            </td>
+        
+                <td>
+                    <div class="action-links">
+                        <a href="/Assignments/Edit?id=@item.id">Edit</a>
+                        <a href="/Assignments/Delete?id=@item.id">Delete</a>
+                        <a href="/Assignments/Complete?id=@item.id">Complete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+</body>
+

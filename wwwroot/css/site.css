@@ -1,0 +1,111 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  margin:0;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Added justify-content */
+}
+
+.add-button {
+  padding: 4px 14px;
+  font-size: 24px;
+  font-weight: lighter;
+  color: #1a1e21;
+  background-color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition for transform */
+}
+
+.add-button:hover {
+  background-color: #2c3034;
+  transform: scale(1.2); /* Scale the button to 120% on hover */
+  color: white;
+}
+
+.add-button:focus {
+  outline: none;
+}
+
+
+
+
+
+
+
+
+.action-links {
+  display: flex; /* Use flexbox */
+  flex-direction: row; /* Horizontal layout */
+  gap: 10px; /* Space between links */
+  padding: 8px 12px;
+  font-size: 12px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Add transition for box-shadow */
+  text-decoration: none;
+  color:black;
+  border-radius: 5px; /* Move border-radius to base styles */
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.action-links a {
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: transparent; /* Blue color for buttons */
+  color: black; /* White color for text */
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.action-links a:hover {
+  background-color: black; /* Darker blue color on hover */
+  color:white;
+}
+
+/* Define styles for completed status */
+.completed-status {
+  color: green;
+}
+
+/* Define styles for pending status */
+.pending-status {
+  color: red;
+}
+
+.table{
+  margin-top: 2px;
+}
+
+.table-content{
+  margin: 3%;
+}

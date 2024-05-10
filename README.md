@@ -10,19 +10,19 @@ Assignment Tracker is a robust application built using ASP.NET Core and Microsof
 
 ## Screenshots
 
+
+### Add assignments with ease.
 ![Screenshot 1](https://github.com/nkouki98/Assignment-Tracker/blob/main/Createassignment.gif)  
 
-*Add assignments with ease.*
 
-
+### Complete and Delete assignments
 ![Screenshot 2](https://github.com/nkouki98/Assignment-Tracker/blob/main/completeordelete.gif)  
 
-*Complete and Delete assignments*
 
-
+### Edit assignments that are being tracked.
 ![Screenshot 3](https://github.com/nkouki98/Assignment-Tracker/blob/main/Editassignment.gif)  
 
-*Edit assignments that are being tracked.*
+
 
 ## ASP.NET Core with SQL Server 
 

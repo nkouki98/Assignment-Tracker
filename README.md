@@ -26,7 +26,7 @@ Assignment Tracker is a robust application built using ASP.NET Core and Microsof
 
 ## ASP.NET Core with SQL Server 
 
-This application is built using ASP.NET Core, a cross-platform, high-performance framework for building modern, cloud-based, internet-connected applications. It leverages Microsoft SQL Server as the backend database for robust data storage and management.
+This application is built using ASP.NET Core Web App on MacOS using Rider and Docker (For SQL Server Instance).
 
 ## License
 
